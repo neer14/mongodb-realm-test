@@ -7,7 +7,7 @@ exports = function(product, zone){
         password: "BApEnh6wCqHErmLvmUjoYaAY",
       },
     });
-    
+ return client;   
   const sendProductInstance = client.updateByQuery({
       index: 'products-instances',
       body: {
