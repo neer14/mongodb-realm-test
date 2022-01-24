@@ -183,7 +183,6 @@ exports = function(product, zone){
         "ar" : "Collectibles"
     },
     "treeNodeLevel" : 1,
-    "updated" : ISODate("2021-11-26T09:36:26.210Z"),
     "productsCount" : 45
 }],
     tax_class: product.tax_class,
