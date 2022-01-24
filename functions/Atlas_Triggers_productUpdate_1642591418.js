@@ -38,6 +38,12 @@ exports = async function(changeEvent) {
           "https://www\\u002ejilberto\\u002ecom/Uploads/UrunResimleri/buyuk/emmy-gercek-hasir-oval-okceli-mantar-t-5fa798\\u002ejpg" : "",
           "https://www\\u002ejilberto\\u002ecom/Uploads/UrunResimleri/buyuk/emmy-gercek-hasir-oval-okceli-mantar-t-19ed-4\\u002ejpg" : ""
       },
+    "categories" : [ 
+        1, 
+        34, 
+        36, 
+        852
+    ],
       "variant" : [ 
           {
               "source_sku" : "19LUK20KUM0019738-393-TEN-38",
@@ -266,7 +272,7 @@ exports = async function(changeEvent) {
               key => product.images[key] || key.replace(/\\u002e/g, '.')
               );
           if (product.categories?.length) {
-            const categories = await mongodb.db("spdev").collection("categories").find({ _id: { $in: product.categories } });
+            const categories = await mongodb.db("spdev").collection("categories").find({ _id: { $in: product.categories } }).toArray();
             product.categories_ids = product.categories;
             product.categories = categories;
           }
