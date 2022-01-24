@@ -176,7 +176,16 @@ exports = function(product, zone){
   if (!transformedProduct) return false;
   const esProduct = {
     archive: product.archive,
-    categories: product.categories,
+    categories: [{
+    "_id" : 1,
+    "name" : {
+        "en" : "Collectibles",
+        "ar" : "Collectibles"
+    },
+    "treeNodeLevel" : 1,
+    "updated" : ISODate("2021-11-26T09:36:26.210Z"),
+    "productsCount" : 45
+}],
     tax_class: product.tax_class,
     created: product.created,
     name: transformI18n(transformedProduct.name) || {},
