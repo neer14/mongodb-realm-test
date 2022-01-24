@@ -6,8 +6,7 @@ exports = function(product, zone){
         username: "elastic",
         password: "BApEnh6wCqHErmLvmUjoYaAY",
       },
-    });
- return client;   
+    });   
   const sendProductInstance = client.updateByQuery({
       index: 'products-instances',
       body: {
