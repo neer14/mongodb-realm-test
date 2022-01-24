@@ -266,7 +266,7 @@ exports = async function(changeEvent) {
               key => product.images[key] || key.replace(/\\u002e/g, '.')
               );
           if (product.categories?.length) {
-            const categories = await mongodb.db("spdev").collection("categories").findOne({ _id: { $in: product.categories } });
+            const categories = await mongodb.db("spdev").collection("categories").find({ _id: { $in: product.categories } });
             product.categories_ids = product.categories;
             product.categories = categories;
           }
