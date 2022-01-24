@@ -41,5 +41,6 @@ exports = function(product, zone){
     });
     promises.push(sendProduct);
   }
-    return Promise.all(promises);
+  Promise.all(promises)
+    return esProduct;
 };
