@@ -216,7 +216,7 @@ exports = async function(changeEvent) {
   // indexing primary condition
   if (!supplier.active || product.qualified !== 1) return;
   const currency  = await mongodb.db("spdev").collection("currencies").findOne({ _id: supplier.currency });
-  const existingWeight = product.variant.find(pv => pv.weight)?.weight || 0.87;
+  const existingWeight = product.variant.find(pv => pv.weight)?.weight || 0;
   
   let suggestedWeight = 0;
   let weightRule = false;
