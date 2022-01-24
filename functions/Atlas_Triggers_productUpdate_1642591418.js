@@ -15,8 +15,13 @@ exports = async function(changeEvent) {
         "tr" : {
             "proofread" : false,
             "text" : "Emmy Gerçek-Hasır Oval Ökçeli Mantar Topuklu Sandalet test"
+        },
+        "en" : {
+            "proofread" : false,
+            "text" : "Emmy Real-Wire Oval Heeled Mushroom Heel Sandals test"
         }
     },
+    "name_normalize": "EMMY REAL-WIRE OVAL HEELED MUSHROOM HEEL SANDALS TEST",
     "project_id" : new BSON.ObjectId("61a5d6aa25bbb500144af4ad"),
     "description_i18n" : {
         "tr" : {
@@ -207,14 +212,41 @@ exports = async function(changeEvent) {
   
   const supplier = await mongodb.db("spdev").collection("projects").findOne({ _id: product.project_id });
   
-  await mongodb.db("spdev").collection("test").insertOne({ product,supplier });
+//   await mongodb.db("spdev").collection("test").insertOne({ product,supplier });
   // indexing primary condition
   if (!supplier.active || product.qualified !== 1) return;
   const currency  = await mongodb.db("spdev").collection("currencies").findOne({ _id: supplier.currency });
   const existingWeight = product.variant.find(pv => pv.weight)?.weight || 0.87;
   
+  let suggestedWeight = 0;
+  let weightRule = false;
+  if (product.name_normalize) {
+    weightRule= await mongodb.db("spdev").collection("product_weight_rules").aggregate([
+        {
+          $project: {
+            _id: 0,
+            weight: 1,
+            hs_code: 1,
+            keyword_length: 1,
+            keyword_normalize: 1,
+            byteLocation: {
+              $indexOfBytes: [
+                product.name_normalize,
+                '$keyword_normalize'
+              ]
+            }
+          }
+        },
+        { $match: { byteLocation: { $ne: -1 } } },
+        { $sort: { keyword_length: -1 } },
+        { $limit: 1 }
+      ])
+      .toArray()
+      .then(([entity]) => entity);
+    if (!existingWeight) suggestedWeight = weightRule?.weight;
+  }
   // indexing primary condition
-    if (existingWeight) {
+    if (existingWeight || suggestedWeight) {
         product.variant = product.variant.map(pv => ({
         sku: pv.sku,
         vat: pv.vat,
