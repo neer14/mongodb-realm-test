@@ -258,5 +258,5 @@ exports = async function(changeEvent) {
   //     context.functions.execute("sendtoAppSearch", product, zone);
   //   }
   // }
-  return context.functions.execute("sendtoAppSearch", product, zones[0]);
+  return context.functions.execute("sendtoElasticProducts", product, zones[0]);
 };
