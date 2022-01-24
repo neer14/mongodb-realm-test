@@ -1,0 +1,6 @@
+{
+    "values": {
+        "APP_AUTH": "mp:helloWorldcita",
+        "MP_BASEURL": "https://dev.mp.knawat.io/api"
+    }
+}

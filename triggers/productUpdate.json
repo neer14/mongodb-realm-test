@@ -1,0 +1,26 @@
+{
+    "id": "61e7f4c56caf7586f2031560",
+    "name": "productUpdate",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "UPDATE"
+        ],
+        "database": "spdev",
+        "collection": "products",
+        "service_name": "Cluster0",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": false,
+        "unordered": true
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "Atlas_Triggers_productUpdate_1642591418"
+            }
+        }
+    }
+}
