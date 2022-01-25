@@ -8,6 +8,7 @@ exports = async function(product, zone){
       key,
       () => `${url}/api/as/v1/`
     );
+    /*
   if(product.archive){
     return client.destroyDocuments(searchEngine, [product.sku]);
   }
@@ -27,4 +28,5 @@ exports = async function(product, zone){
       }
     }
   }
+  */
 };
