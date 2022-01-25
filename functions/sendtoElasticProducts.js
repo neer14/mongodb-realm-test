@@ -1,10 +1,10 @@
 exports = function(product, zone){
   const { Client } = require('@elastic/elasticsearch');
   const client = new Client({
-      node: "https://development-relam.es.us-east4.gcp.elastic-cloud.com:9243",
+      node: "https://506c2467738d4029a5a69da87dd665a6.us-west-2.aws.found.io:9243",
       auth: {
-        username: "elastic",
-        password: "BApEnh6wCqHErmLvmUjoYaAY",
+        username: "indexer",
+        password: "asdasdjhaghjdg78768",
       },
     });   
   const sendProductInstance = client.updateByQuery({
