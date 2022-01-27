@@ -1,5 +1,5 @@
 exports = async function(changeEvent) {
-    // const {fullDocument: product} = changeEvent;
+    const {fullDocument: product} = changeEvent;
     /*
     const product = {
       "_id" :  new BSON.ObjectId("61e7f0b71d37e092cd6551cb"),
