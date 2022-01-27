@@ -85,6 +85,7 @@ exports = function(product, zone){
     }
   );
   const sanitizedProduct = {
+    id: product.sku,
     sku: product.sku,
     created: product.created,
     currency: product.product_currency,

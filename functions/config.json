@@ -1,5 +1,10 @@
 [
     {
+        "name": "sendtoAppSearch",
+        "private": false,
+        "run_as_system": true
+    },
+    {
         "name": "sendtoElasticProducts",
         "private": false,
         "run_as_system": true
@@ -21,11 +26,6 @@
     },
     {
         "name": "getZones",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "sendtoAppSearch",
         "private": false,
         "run_as_system": true
     }
