@@ -1,6 +1,5 @@
 exports = async function(changeEvent) {
-    const {fullDocument: product} = changeEvent;
-    
+    // const {fullDocument: product} = changeEvent;
     /*
     const product = {
       "_id" :  new BSON.ObjectId("61e7f0b71d37e092cd6551cb"),
@@ -15,11 +14,11 @@ exports = async function(changeEvent) {
       "name_i18n" : {
           "tr" : {
               "proofread" : false,
-              "text" : "Emmy Gerçek-Hasır Oval Ökçeli Mantar Topuklu Sandalet test"
+              "text" : "Emmy Gerçek-Hasır Oval Ökçeli Mantar Topuklu Sandalet test 1"
           },
           "en" : {
               "proofread" : false,
-              "text" : "Emmy Real-Wire Oval Heeled Mushroom Heel Sandals test"
+              "text" : "Emmy Real-Wire Oval Heeled Mushroom Heel Sandals test 1"
           }
       },
       "name_normalize": "EMMY REAL-WIRE OVAL HEELED MUSHROOM HEEL SANDALS TEST",
@@ -139,11 +138,13 @@ exports = async function(changeEvent) {
       "attributes" : [ 
           {
               "name" : {
-                  "tr" : "Renk"
+                  "tr" : "Renk",
+                  "en" : "Color"
               },
               "options" : [ 
                   {
-                      "tr" : "Ten"
+                      "tr" : "Ten",
+                      "en" : "Skin"
                   }
               ]
           }, 
@@ -214,7 +215,7 @@ exports = async function(changeEvent) {
           }
       ]
   };
-  */
+    */
     const mongodb = context.services.get("Cluster0");
     
     const supplier = await mongodb.db("spdev").collection("projects").findOne({ _id: product.project_id });
@@ -294,14 +295,14 @@ exports = async function(changeEvent) {
           if (taxClass) product.tax_class = taxClass;
       }
     const zones = await context.functions.execute("getZones");
-    // for (const zone of zones) {
-    //   if(product?.warehouse?.zones?.includes(zone.id)){
-    //     // push to elastic search
-    //     context.functions.execute("sendtoElasticProducts", product, zone);
-    //     // push to app search
-    //     context.functions.execute("sendtoAppSearch", product, zone);
-    //   }
-    // }
-    return context.functions.execute("sendtoElasticProducts", product, zones[0]);
+    for (const zone of zones) {
+      if(product?.warehouse?.zones?.includes(zone.id)){
+        // push to elastic search
+        context.functions.execute("sendtoElasticProducts", product, zone);
+        // push to app search
+        context.functions.execute("sendtoAppSearch", product, zone);
+      }
+    }
+    return true;
   };
   
