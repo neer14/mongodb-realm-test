@@ -121,7 +121,20 @@ exports = function(product, zone){
     if (Object.keys(productBrand).length)
       sanitizedProduct.brand = Object.values(productBrand);
   }
-  
+  if (product.attributes) {
+    product.attributes.forEach(attr => {
+      Object.keys(attr.name).forEach(lang => {
+        const optionArr = attr.options.map(opt => opt[lang]).filter(attr => attr);
+        if(optionArr.length){
+          const attrKey = `attributes_${lang}`;
+          if(!sanitizedProduct[attrKey]) sanitizedProduct[attrKey] = [];
+          sanitizedProduct[attrKey].push({
+            [attr.name[lang]]: optionArr
+          })
+        }
+      })
+    })
+  }
   if (product.categories?.length) {
     allowedLanguages.forEach(language => {
       const categories = getCategoryHierarchy(product.categories, language);
