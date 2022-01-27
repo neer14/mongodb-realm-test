@@ -17,6 +17,7 @@ exports = async function(product, zone){
   }
   else{
     const appSearchProduct = context.functions.execute("transformAppSearchProduct", product, zone);
+    return appSearchProduct;
     if (appSearchProduct) {
       return context.http.patch({ 
         url: requestUrl,
