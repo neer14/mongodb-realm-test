@@ -11,14 +11,13 @@ exports = function(){
       )}`],
     } 
   })
-    .then(response => {
-      // The response body is encoded as raw BSON.Binary. Parse it to JSON.
-      const ejson_body = EJSON.parse(response.body.text());
-      return ejson_body.rows.filter(zone => zone.id === "INT").map(zone =>{
-            zone.allowed_languages = zone.allowed_languages.map(
-              lang => lang.split('-')[0].toLowerCase()
-            );
-        return zone;
-      });
-    })
+  .then(res => EJSON.parse(res.body.text()))
+  .then(res => {
+    return res.rows.filter(zone => zone.id === "INT").map(zone =>{
+          zone.allowed_languages = zone.allowed_languages.map(
+            lang => lang.split('-')[0].toLowerCase()
+          );
+      return zone;
+    });
+  })
 };
