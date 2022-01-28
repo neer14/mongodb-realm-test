@@ -1,6 +1,6 @@
 exports = async function(changeEvent) {
-    // const {fullDocument: product} = changeEvent;
-    
+    const {fullDocument: product} = changeEvent;
+    /*
     const product = {
       "_id" :  new BSON.ObjectId("61e7f0b71d37e092cd6551cb"),
       "source_sku" : "19LUK20KUM0019739-82",
@@ -14,11 +14,11 @@ exports = async function(changeEvent) {
       "name_i18n" : {
           "tr" : {
               "proofread" : false,
-              "text" : "Emmy Gerçek-Hasır Oval Ökçeli Mantar Topuklu Sandalet test 1"
+              "text" : "Emmy Gerçek-Hasır Oval Ökçeli Mantar Topuklu Sandalet test 2"
           },
           "en" : {
               "proofread" : false,
-              "text" : "Emmy Real-Wire Oval Heeled Mushroom Heel Sandals test 1"
+              "text" : "Emmy Real-Wire Oval Heeled Mushroom Heel Sandals test 2"
           }
       },
       "name_normalize": "EMMY REAL-WIRE OVAL HEELED MUSHROOM HEEL SANDALS TEST",
@@ -50,7 +50,7 @@ exports = async function(changeEvent) {
               "vat" : 8,
               "price" : 129.99,
               "market_price" : 259.98,
-              "quantity" : 14,
+              "quantity" : 25,
               "archive" : false,
               "barcode" : "2000131730386",
               "weight" : 0.2,
@@ -215,7 +215,7 @@ exports = async function(changeEvent) {
           }
       ]
   };
-   
+    */
     const mongodb = context.services.get("Cluster0");
     
     const supplier = await mongodb.db("spdev").collection("projects").findOne({ _id: product.project_id });
