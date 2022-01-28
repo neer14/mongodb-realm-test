@@ -1,6 +1,6 @@
 exports = async function(changeEvent) {
-    const {fullDocument: product} = changeEvent;
-    /*
+    // const {fullDocument: product} = changeEvent;
+    
     const product = {
       "_id" :  new BSON.ObjectId("61e7f0b71d37e092cd6551cb"),
       "source_sku" : "19LUK20KUM0019739-82",
@@ -215,7 +215,7 @@ exports = async function(changeEvent) {
           }
       ]
   };
-    */
+   
     const mongodb = context.services.get("Cluster0");
     
     const supplier = await mongodb.db("spdev").collection("projects").findOne({ _id: product.project_id });
@@ -299,6 +299,8 @@ exports = async function(changeEvent) {
       if(product?.warehouse?.zones?.includes(zone.id)){
         // push to elastic search
         context.functions.execute("sendtoElasticProducts", product, zone);
+        // push to algolia
+        context.functions.execute("sendtoAlgolia", product, zone);
         // push to app search
         context.functions.execute("sendtoAppSearch", product, zone);
       }
