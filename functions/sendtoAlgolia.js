@@ -19,6 +19,8 @@ exports = function(product, zone){
   }
   else{
     const appSearchProduct = context.functions.execute("transformAppSearchProduct", product, zone);
+    appSearchProduct.objectID = product.sku;
+    return appSearchProduct;
     // const appSearchProduct = product;
     if (appSearchProduct) {
       index.partialUpdateObjects([appSearchProduct], { createIfNotExists: true });
