@@ -1,10 +1,5 @@
 [
     {
-        "name": "decode",
-        "private": false,
-        "run_as_system": true
-    },
-    {
         "name": "sendtoAlgolia",
         "private": false,
         "run_as_system": true
@@ -15,22 +10,7 @@
         "run_as_system": true
     },
     {
-        "name": "sendtoElasticProducts",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "getZones",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "sendtoAppSearch",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "transformEsProduct",
+        "name": "decrypt",
         "private": false,
         "run_as_system": true
     },
@@ -40,7 +20,27 @@
         "can_evaluate": {}
     },
     {
-        "name": "decrypt",
+        "name": "getZones",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "sendtoElasticProducts",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "decode",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "transformEsProduct",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "sendtoAppSearch",
         "private": false,
         "run_as_system": true
     }

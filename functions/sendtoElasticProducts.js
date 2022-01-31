@@ -1,10 +1,11 @@
 exports = function(product, zone){
   const { Client } = require('@elastic/elasticsearch');
+  const [user, password] = context.functions.execute("decode", zone.metadata.elasticsearch_secret).split(':');
   const client = new Client({
-      node: "https://506c2467738d4029a5a69da87dd665a6.us-west-2.aws.found.io:9243",
+      node: zone.metadata.elasticsearch_url,
       auth: {
-        username: "indexer",
-        password: "asdasdjhaghjdg78768",
+        username: context.functions.execute("decrypt", user),
+        password: context.functions.execute("decrypt", password),
       },
     });   
   const sendProductInstance = client.updateByQuery({
