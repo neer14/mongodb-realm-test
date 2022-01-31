@@ -1,15 +1,5 @@
 [
     {
-        "name": "getZones",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "sendtoAlgolia",
-        "private": false,
-        "run_as_system": true
-    },
-    {
         "name": "sendtoAppSearch",
         "private": false,
         "run_as_system": true
@@ -35,7 +25,12 @@
         "can_evaluate": {}
     },
     {
-        "name": "secure",
+        "name": "getZones",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "sendtoAlgolia",
         "private": false,
         "run_as_system": true
     }
