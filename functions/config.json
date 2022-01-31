@@ -1,16 +1,11 @@
 [
     {
-        "name": "sendtoAlgolia",
+        "name": "sendtoAppSearch",
         "private": false,
         "run_as_system": true
     },
     {
-        "name": "Atlas_Triggers_productUpdate_1642591418",
-        "private": false,
-        "can_evaluate": {}
-    },
-    {
-        "name": "decode",
+        "name": "transformAppSearchProduct",
         "private": false,
         "run_as_system": true
     },
@@ -20,12 +15,7 @@
         "run_as_system": true
     },
     {
-        "name": "decrypt",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "sendtoAppSearch",
+        "name": "sendtoAlgolia",
         "private": false,
         "run_as_system": true
     },
@@ -40,8 +30,18 @@
         "run_as_system": true
     },
     {
-        "name": "transformAppSearchProduct",
+        "name": "decode",
         "private": false,
         "run_as_system": true
+    },
+    {
+        "name": "decrypt",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "Atlas_Triggers_productUpdate_1642591418",
+        "private": false,
+        "can_evaluate": {}
     }
 ]
