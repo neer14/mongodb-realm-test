@@ -1,6 +1,16 @@
 [
     {
-        "name": "sendtoAppSearch",
+        "name": "decode",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "sendtoAlgolia",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "transformAppSearchProduct",
         "private": false,
         "run_as_system": true
     },
@@ -10,7 +20,12 @@
         "run_as_system": true
     },
     {
-        "name": "transformAppSearchProduct",
+        "name": "getZones",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "sendtoAppSearch",
         "private": false,
         "run_as_system": true
     },
@@ -26,20 +41,6 @@
     },
     {
         "name": "decrypt",
-        "private": false
-    },
-    {
-        "name": "getZones",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "sendtoAlgolia",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "decode",
         "private": false,
         "run_as_system": true
     }
