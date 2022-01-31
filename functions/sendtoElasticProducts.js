@@ -1,5 +1,6 @@
 exports = function(product, zone){
   const { Client } = require('@elastic/elasticsearch');
+  return {a: zone.metadata.elasticsearch_secret, b: zone.metadata.elasticsearch_secret}
   const [user, password] = context.functions.execute("decode", zone.metadata.elasticsearch_secret).split(':');
   const client = new Client({
       node: zone.metadata.elasticsearch_url,
