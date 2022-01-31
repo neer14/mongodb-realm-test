@@ -1,0 +1,5 @@
+{
+    "name": "SECURITY_KEY",
+    "value": "SECURITY_KEY",
+    "from_secret": true
+}
