@@ -5,6 +5,6 @@
         "config": {
             "authFunctionName": "testAuthentication"
         },
-        "disabled": false
+        "disabled": true
     }
 }
