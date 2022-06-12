@@ -1,13 +1,33 @@
 [
     {
+        "name": "sendtoAppSearch",
+        "private": false,
+        "run_as_system": true
+    },
+    {
         "name": "sendtoElasticProducts",
         "private": false,
         "run_as_system": true
     },
     {
-        "name": "Atlas_Triggers_productUpdate_1642591418",
+        "name": "getZones",
         "private": false,
-        "can_evaluate": {}
+        "run_as_system": true
+    },
+    {
+        "name": "sendtoAlgolia",
+        "private": false,
+        "run_as_system": true
+    },
+    {
+        "name": "testAuthentication",
+        "private": false,
+        "disable_arg_logs": true
+    },
+    {
+        "name": "transformEsProduct",
+        "private": false,
+        "run_as_system": true
     },
     {
         "name": "decode",
@@ -20,33 +40,13 @@
         "run_as_system": true
     },
     {
-        "name": "sendtoAlgolia",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "sendtoAppSearch",
-        "private": false,
-        "run_as_system": true
-    },
-    {
         "name": "transformAppSearchProduct",
         "private": false,
         "run_as_system": true
     },
     {
-        "name": "transformEsProduct",
+        "name": "Atlas_Triggers_productUpdate_1642591418",
         "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "getZones",
-        "private": false,
-        "run_as_system": true
-    },
-    {
-        "name": "testAuthentication",
-        "private": false,
-        "disable_arg_logs": true
+        "can_evaluate": {}
     }
 ]
