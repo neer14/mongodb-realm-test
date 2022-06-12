@@ -1,0 +1,179 @@
+{
+    "properties": {
+        "_id": {
+            "bsonType": "objectId"
+        },
+        "active": {
+            "bsonType": "bool"
+        },
+        "beta": {
+            "bsonType": "bool"
+        },
+        "company_description": {
+            "bsonType": "string"
+        },
+        "consumer_key": {
+            "bsonType": "string"
+        },
+        "consumer_secret": {
+            "bsonType": "string"
+        },
+        "created": {
+            "bsonType": "date"
+        },
+        "currency": {
+            "bsonType": "string"
+        },
+        "default_warehouse_id": {
+            "bsonType": "string"
+        },
+        "email": {
+            "bsonType": "string"
+        },
+        "handling_time": {
+            "bsonType": "object",
+            "properties": {
+                "from": {
+                    "bsonType": "int"
+                },
+                "to": {
+                    "bsonType": "int"
+                }
+            }
+        },
+        "is_marketplace": {
+            "bsonType": "bool"
+        },
+        "languages": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        },
+        "last_check_date": {
+            "bsonType": "date"
+        },
+        "last_translation_update": {
+            "bsonType": "string"
+        },
+        "last_translation_update_mtgoogle": {
+            "bsonType": "date"
+        },
+        "last_translation_update_scrapper": {
+            "bsonType": "date"
+        },
+        "last_translation_update_smartcat": {
+            "bsonType": "date"
+        },
+        "last_xml_update": {
+            "bsonType": "date"
+        },
+        "logo": {
+            "bsonType": "string"
+        },
+        "max_cost": {
+            "bsonType": "int"
+        },
+        "min_cost": {
+            "bsonType": "int"
+        },
+        "min_stock": {
+            "bsonType": "int"
+        },
+        "name": {
+            "bsonType": "string"
+        },
+        "name_normalized": {
+            "bsonType": "string"
+        },
+        "price_settings": {
+            "bsonType": "object",
+            "properties": {
+                "INT": {
+                    "bsonType": "object",
+                    "properties": {
+                        "price_to_cost": {
+                            "bsonType": "int"
+                        },
+                        "price_to_sale": {
+                            "bsonType": "int"
+                        }
+                    }
+                },
+                "SA": {
+                    "bsonType": "object",
+                    "properties": {
+                        "price_to_cost": {
+                            "bsonType": "int"
+                        },
+                        "price_to_sale": {
+                            "bsonType": "int"
+                        }
+                    }
+                },
+                "TR": {
+                    "bsonType": "object",
+                    "properties": {
+                        "price_to_cost": {
+                            "bsonType": "int"
+                        },
+                        "price_to_sale": {
+                            "bsonType": "int"
+                        }
+                    }
+                }
+            }
+        },
+        "project_key": {
+            "bsonType": "string"
+        },
+        "sku_prefix": {
+            "bsonType": "string"
+        },
+        "source_type": {
+            "bsonType": "string"
+        },
+        "translation_worker": {
+            "bsonType": "bool"
+        },
+        "updated": {
+            "bsonType": "date"
+        },
+        "updated_date": {
+            "bsonType": "date"
+        },
+        "url": {
+            "bsonType": "string"
+        },
+        "users": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "object",
+                "properties": {
+                    "email": {
+                        "bsonType": "string"
+                    },
+                    "roles": {
+                        "bsonType": "array",
+                        "items": {
+                            "bsonType": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "vat": {
+            "bsonType": "int"
+        },
+        "vendor": {
+            "bsonType": "string"
+        },
+        "xml_url": {
+            "bsonType": "array",
+            "items": {
+                "bsonType": "string"
+            }
+        }
+    },
+    "title": "project"
+}
