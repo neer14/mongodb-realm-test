@@ -1,0 +1,34 @@
+{
+    "collection": "projects",
+    "database": "spdev",
+    "filters": [
+        {
+            "name": "filter 1",
+            "query": {
+                "beta": true
+            },
+            "projection": {
+                "name": {
+                    "$numberInt": "1"
+                }
+            },
+            "apply_when": {
+                "active": true
+            }
+        }
+    ],
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "fields": {
+                "projectsrules": {}
+            },
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        }
+    ]
+}

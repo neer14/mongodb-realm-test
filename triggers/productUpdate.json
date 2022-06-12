@@ -13,7 +13,8 @@
         "project": {},
         "full_document": true,
         "full_document_before_change": false,
-        "unordered": true
+        "unordered": true,
+        "skip_catchup_events": false
     },
     "disabled": false,
     "event_processors": {
