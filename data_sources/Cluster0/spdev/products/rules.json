@@ -1,0 +1,32 @@
+{
+    "collection": "products",
+    "database": "spdev",
+    "roles": [
+        {
+            "name": "default",
+            "apply_when": {},
+            "fields": {
+                "testproductsrules": {
+                    "read": true
+                }
+            },
+            "insert": true,
+            "delete": true,
+            "search": true,
+            "additional_fields": {}
+        },
+        {
+            "name": "subadmin",
+            "apply_when": {},
+            "fields": {
+                "testproductsrules": {
+                    "read": true
+                }
+            },
+            "insert": false,
+            "delete": false,
+            "search": true,
+            "additional_fields": {}
+        }
+    ]
+}
